@@ -15,8 +15,7 @@
 
     .quizz {
         width: 90%;
-        height: 30%;
-        margin-bottom: 18px;
+        height: auto;
     }
 
     .quizz p {
