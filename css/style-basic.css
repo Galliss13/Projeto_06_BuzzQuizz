@@ -4,6 +4,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
 }
 
 header {
@@ -27,7 +28,7 @@ header h1 {
 main {
     width: 100%;
     height: fit-content;
-    background-color: #ffffff;
+    background-color: #fafafa;
     display: flex;
     justify-content: center;
 }

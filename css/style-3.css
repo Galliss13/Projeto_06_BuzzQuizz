@@ -1,0 +1,144 @@
+textarea:focus, input:focus, select:focus {
+    outline: 0;
+}
+
+.main_3 {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.m3-create-header {
+    width: 52%;
+    height: 69px;
+    margin: 3% 0 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.m3-create {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.m3-theme,
+.m3-question,
+.m3-level {
+    width: 52%;
+    height: fit-content;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    margin: 15px 0 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.m3-theme {
+    padding: 30px 17px 21px 17px;
+}
+
+.m3-create span {
+    width: 90%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    padding: 25px 17px;
+    display: flex;
+    justify-content: left;
+}
+
+.m3-create img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.m3-create input {
+    width: 90%;
+    height: 50px;
+    background-color: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.m3-create input::placeholder {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    color: #BABABA;
+}
+
+.m3-create button {
+    width: 45%;
+    height: 54px;
+    background-color: #EC362D;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 5% 0 30px 0;
+    cursor: pointer;
+}
+
+.m3-question-header,
+.m3-level-header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    padding: 17px;
+}
+
+.m3-question-options,
+.m3-level-options {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.m3-plus-question {
+    width: 52%;
+    height: 54px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    margin: 15px 0 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.m3-level-options :nth-child(4) {
+    height: 175px;
+}
+
+/*
+.m3-level-options :nth-child(4)::placeholder {
+
+}
+*/
