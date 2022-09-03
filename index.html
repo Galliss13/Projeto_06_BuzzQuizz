@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,11 +15,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 
     <link rel="icon" href="img/favicon.png">
     <title>BuzzQuizz</title>
 </head>
+
 <body>
     <header>
         <h1>BuzzQuizz</h1>
@@ -39,15 +43,15 @@
             <!--ABRE QUANDO ALGUM QUIZZ JÁ FOI CRIADO-->
             <div class="myquizzes_box hidden">
                 <div class="myquizzes">
-                    <div data-identifier="quizz-card" class= "quizz">
+                    <div data-identifier="quizz-card" class="quizz">
                         <img src='img\exemplo.JPG'>
                         <p>exemplo massa</p>
                     </div>
-                    <div data-identifier="quizz-card" class= "quizz">
+                    <div data-identifier="quizz-card" class="quizz">
                         <img src='img\exemplo.JPG'>
                         <p>exemplo massa</p>
                     </div>
-                    <div data-identifier="quizz-card" class= "quizz">
+                    <div data-identifier="quizz-card" class="quizz">
                         <img src='img\exemplo.JPG'>
                         <p>exemplo massa</p>
                     </div>
@@ -62,9 +66,39 @@
                 </div>
             </div>
         </div>
+
         <div class="main_2 hidden">
-            
+            <div class="quizz-title">
+            </div>
+            <div class="quizz-box">
+                <div class="box-title">
+                </div>
+                <div class="box-options">
+                </div>
+            </div>
+            <div class="quizz-box">
+                <div class="box-title"></div>
+                <div class="box-options"></div>
+            </div>
+            <div class="quizz-box">
+                <div class="box-title"></div>
+                <div class="box-options"></div>
+            </div>
+            <div class="box-results">
+                <div class="results-score">
+
+                </div>
+                <div class="results-message">
+
+                </div>
+            </div>
+            <div class="quizz-options">
+                <button class="reset-quizz" onclick="resetQuizz()">Reiniciar Quizz</button>
+                <div class="quit-quizz" onclick="pageToHome()">Voltar para home</div>
+            </div>
+
         </div>
+
         <div class="main_3 ">
             <!--TITULOS DA PAGINA 3-->
             <div class="m3-create-header">
@@ -88,11 +122,11 @@
             <div class="m3-create m3.2 hidden">
                 <!--PERGUNTA 1-->
                 <div class="m3-question" data-identifier="question">
-                    <div class="m3-question-header">    
+                    <div class="m3-question-header">
                         <span class="m3-question-number" data-identifier="question-form">Pergunta 1</span>
                         <img src="img\edit.svg" alt="Editar" class="hidden" data-identifier="expand">
                     </div>
-                    <div class="m3-question-options">    
+                    <div class="m3-question-options">
                         <input type="text" placeholder="Texto da pergunta">
                         <input type="text" placeholder="Cor de fundo da pergunta">
                         <span>Resposta correta</span>
@@ -105,15 +139,15 @@
                         <input type="text" placeholder="URL da imagem 2">
                         <input type="text" placeholder="Resposta incorreta 3">
                         <input type="text" placeholder="URL da imagem 3">
-                    </div> 
+                    </div>
                 </div>
                 <!--PERGUNTA 2-->
                 <div class="m3-question" data-identifier="question">
-                    <div class="m3-question-header">    
+                    <div class="m3-question-header">
                         <span class="m3-question-number" data-identifier="question-form">Pergunta 2</span>
                         <img src="img\edit.svg" alt="Editar" data-identifier="expand">
                     </div>
-                    <div class="m3-question-options hidden">    
+                    <div class="m3-question-options hidden">
                         <input type="text" placeholder="Texto da pergunta">
                         <input type="text" placeholder="Cor de fundo da pergunta">
                         <span>Resposta correta</span>
@@ -126,15 +160,15 @@
                         <input type="text" placeholder="URL da imagem 2">
                         <input type="text" placeholder="Resposta incorreta 3">
                         <input type="text" placeholder="URL da imagem 3">
-                    </div> 
+                    </div>
                 </div>
                 <!--PERGUNTA 3-->
                 <div class="m3-question" data-identifier="question">
-                    <div class="m3-question-header">    
+                    <div class="m3-question-header">
                         <span class="m3-question-number" data-identifier="question-form">Pergunta 3</span>
                         <img src="img\edit.svg" alt="Editar" data-identifier="expand">
                     </div>
-                    <div class="m3-question-options hidden">    
+                    <div class="m3-question-options hidden">
                         <input type="text" placeholder="Texto da pergunta">
                         <input type="text" placeholder="Cor de fundo da pergunta">
                         <span>Resposta correta</span>
@@ -147,10 +181,10 @@
                         <input type="text" placeholder="URL da imagem 2">
                         <input type="text" placeholder="Resposta incorreta 3">
                         <input type="text" placeholder="URL da imagem 3">
-                    </div> 
+                    </div>
                 </div>
                 <!--MAIS PERGUNTAS-->
-                <div class="m3-plus-question ">   
+                <div class="m3-plus-question ">
                     <img src="img\plus.svg" alt="Mais perguntas">
                 </div>
                 <!--BOTÃO-->
@@ -160,11 +194,11 @@
             <div class="m3-create m3.3 ">
                 <!--NIVEL 1-->
                 <div class="m3-level" data-identifier="question">
-                    <div class="m3-level-header">    
+                    <div class="m3-level-header">
                         <span class="m3-level-number" data-identifier="level">Nível 1</span>
                         <img src="img\edit.svg" alt="Editar" class="hidden" data-identifier="expand">
                     </div>
-                    <div class="m3-level-options">    
+                    <div class="m3-level-options">
                         <input type="text" placeholder="Título do nível">
                         <input type="text" placeholder="% de acerto mínima">
                         <input type="text" placeholder="URL da imagem do nível">
@@ -173,11 +207,11 @@
                 </div>
                 <!--NIVEL 2-->
                 <div class="m3-level" data-identifier="question">
-                    <div class="m3-level-header">    
+                    <div class="m3-level-header">
                         <span class="m3-level-number" data-identifier="level">Nível 2</span>
                         <img src="img\edit.svg" alt="Editar" data-identifier="expand">
                     </div>
-                    <div class="m3-level-options hidden">    
+                    <div class="m3-level-options hidden">
                         <input type="text" placeholder="Título do nível">
                         <input type="text" placeholder="% de acerto mínima">
                         <input type="text" placeholder="URL da imagem do nível">
@@ -186,11 +220,11 @@
                 </div>
                 <!--NIVEL 3-->
                 <div class="m3-level" data-identifier="question">
-                    <div class="m3-level-header">    
+                    <div class="m3-level-header">
                         <span class="m3-level-number" data-identifier="level">Nível 3</span>
                         <img src="img\edit.svg" alt="Editar" data-identifier="expand">
                     </div>
-                    <div class="m3-level-options hidden">    
+                    <div class="m3-level-options hidden">
                         <input type="text" placeholder="Título do nível">
                         <input type="text" placeholder="% de acerto mínima">
                         <input type="text" placeholder="URL da imagem do nível">
@@ -199,7 +233,7 @@
                 </div>
                 <!--BOTÃO-->
                 <button class="m3-button">Finalizar Quizz</button>
-            </div>    
+            </div>
             <!--QUIZZ FINALIZADO-->
             <div class="m3-create m3.4 hidden">
                 <div class="m3-finalized">
@@ -218,4 +252,5 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
