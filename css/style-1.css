@@ -49,6 +49,19 @@
     border-radius: 50px;
 }
 
+
+.myquizzes_p {
+    margin-top: 100px;
+    position: relative;
+}
+
+.myquizzes_icone {
+    color: #EC362D;
+    font-size: 27px;
+    position: absolute;
+    left: 125px;
+}
+
 .quizzes_box p, .myquizzes_p {
     color: #000000;
     font-weight: 700;

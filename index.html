@@ -28,20 +28,21 @@
         <h1>BuzzQuizz</h1>
     </header>
     <main>
-        <div class="main_1 hidden">
+        <!--MAIN 1-->
+        <div class="main_1">
             <!--CRIAR QUIZZES-->
-            <div class="create_quizz_box">
+            <div class="create_quizz_box hidden">
                 <div class="create_quizz">
                     <div class="create_quizz_ps">
                         <p>Você não criou nenhum</p>
                         <p>quizz ainda :(</p>
                     </div>
-                    <button class="create_quizz_button">Criar Quizz</button>
+                    <button onclick="toggleMain(main_1, main_3)" class="create_quizz_button">Criar Quizz</button>
                 </div>
             </div>
-            <p class="myquizzes_p hidden">Seus quizzes</p>
             <!--ABRE QUANDO ALGUM QUIZZ JÁ FOI CRIADO-->
-            <div class="myquizzes_box hidden">
+            <p class="myquizzes_p">Seus quizzes <span class="myquizzes_icone"><ion-icon onclick="toggleMain('main_1', 'main_3')" name="add-circle"></ion-icon></span> </p>
+            <div class="myquizzes_box">
                 <div class="myquizzes">
                     <div data-identifier="quizz-card" class="quizz">
                         <img src='img\exemplo.JPG'>
@@ -66,40 +67,12 @@
                 </div>
             </div>
         </div>
-
+        <!--MAIN 2-->
         <div class="main_2 hidden">
-            <div class="quizz-title">
-            </div>
-            <div class="quizz-box">
-                <div class="box-title">
-                </div>
-                <div class="box-options">
-                </div>
-            </div>
-            <div class="quizz-box">
-                <div class="box-title"></div>
-                <div class="box-options"></div>
-            </div>
-            <div class="quizz-box">
-                <div class="box-title"></div>
-                <div class="box-options"></div>
-            </div>
-            <div class="box-results">
-                <div class="results-score">
-
-                </div>
-                <div class="results-message">
-
-                </div>
-            </div>
-            <div class="quizz-options">
-                <button class="reset-quizz" onclick="resetQuizz()">Reiniciar Quizz</button>
-                <div class="quit-quizz" onclick="pageToHome()">Voltar para home</div>
-            </div>
 
         </div>
-
-        <div class="main_3 ">
+        <!--MAIN 3-->
+        <div class="main_3 hidden">
             <!--TITULOS DA PAGINA 3-->
             <div class="m3-create-header">
                 <span class="m3.1 hidden">Comece pelo começo</span>
@@ -250,6 +223,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="js/script.js"></script>
 </body>
 
