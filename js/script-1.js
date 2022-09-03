@@ -47,3 +47,15 @@ function toggleMain(main_x, main_y) {
     main_x.classList.add('hidden');
     main_y.classList.remove('hidden');
 }
+
+// INTERAÇÃO DE CLICAR EM CRIAR QUIZZ E ABRIR A TELA 3
+function openCreateQuizz() {
+    const main_1 = document.querySelector('.main_1');
+    const main_3 = document.querySelector('.main_3');
+    toggleMain(main_1, main_3);
+}
+
+function toggleMain(main_x, main_y) {
+    main_x.classList.add('hidden');
+    main_y.classList.remove('hidden');
+}

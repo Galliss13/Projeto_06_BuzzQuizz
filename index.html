@@ -28,7 +28,7 @@
         <h1>BuzzQuizz</h1>
     </header>
     <main>
-        <div class="main_1 hidden">
+        <div class="main_1 ">
             <!--CRIAR QUIZZES-->
             <div class="create_quizz_box">
                 <div class="create_quizz">
@@ -36,7 +36,7 @@
                         <p>Você não criou nenhum</p>
                         <p>quizz ainda :(</p>
                     </div>
-                    <button class="create_quizz_button">Criar Quizz</button>
+                    <button class="create_quizz_button" onclick="openCreateQuizz()">Criar Quizz</button>
                 </div>
             </div>
             <p class="myquizzes_p hidden">Seus quizzes</p>
@@ -99,148 +99,44 @@
 
         </div>
 
-        <div class="main_3 ">
+        <div class="main_3 hidden">
             <!--TITULOS DA PAGINA 3-->
             <div class="m3-create-header">
-                <span class="m3.1 hidden">Comece pelo começo</span>
-                <span class="m3.2 ">Crie suas perguntas</span>
-                <span class="m3.3 hidden">Agora, decida os níveis!</span>
-                <span class="m3.4 hidden">seu quizz está pronto!</span>
+                <span >Comece pelo começo</span>
+                <span class="hidden">Crie suas perguntas</span>
+                <span class="hidden">Agora, decida os níveis!</span>
+                <span class="hidden">seu quizz está pronto!</span>
             </div>
             <!--CRIAR QUIZZ-->
-            <div class="m3-create m3.1 hidden">
+            <div class="m3-1 m3-create ">
                 <div class="m3-theme">
-                    <input type="text" placeholder="Título do seu quizz">
-                    <input type="text" placeholder="URL da imagem do seu quizz">
-                    <input type="text" placeholder="Quantidade de perguntas do quizz">
-                    <input type="text" placeholder="Quantidade de níveis do quizz">
+                    <input type="text" size="20" maxlength="65" placeholder="Título do seu quizz">
+                    <input type="url" placeholder="URL da imagem do seu quizz">
+                    <input type="number" min="3" placeholder="Quantidade de perguntas do quizz">
+                    <input type="number" min="2" placeholder="Quantidade de níveis do quizz">
                 </div>
                 <!--BOTÃO-->
-                <button class="m3-button">Prosseguir para criar perguntas</button>
+                <button class="m3-1-button" onclick="goToM32()">Prosseguir para criar perguntas</button>
             </div>
             <!--CRIAR PERGUNTAS-->
-            <div class="m3-create m3.2 hidden">
-                <!--PERGUNTA 1-->
-                <div class="m3-question" data-identifier="question">
-                    <div class="m3-question-header">
-                        <span class="m3-question-number" data-identifier="question-form">Pergunta 1</span>
-                        <img src="img\edit.svg" alt="Editar" class="hidden" data-identifier="expand">
-                    </div>
-                    <div class="m3-question-options">
-                        <input type="text" placeholder="Texto da pergunta">
-                        <input type="text" placeholder="Cor de fundo da pergunta">
-                        <span>Resposta correta</span>
-                        <input type="text" placeholder="Resposta correta">
-                        <input type="text" placeholder="URL da imagem">
-                        <span>Respostas incorreta</span>
-                        <input type="text" placeholder="Resposta incorreta 1">
-                        <input type="text" placeholder="URL da imagem 1">
-                        <input type="text" placeholder="Resposta incorreta 2">
-                        <input type="text" placeholder="URL da imagem 2">
-                        <input type="text" placeholder="Resposta incorreta 3">
-                        <input type="text" placeholder="URL da imagem 3">
-                    </div>
-                </div>
-                <!--PERGUNTA 2-->
-                <div class="m3-question" data-identifier="question">
-                    <div class="m3-question-header">
-                        <span class="m3-question-number" data-identifier="question-form">Pergunta 2</span>
-                        <img src="img\edit.svg" alt="Editar" data-identifier="expand">
-                    </div>
-                    <div class="m3-question-options hidden">
-                        <input type="text" placeholder="Texto da pergunta">
-                        <input type="text" placeholder="Cor de fundo da pergunta">
-                        <span>Resposta correta</span>
-                        <input type="text" placeholder="Resposta correta">
-                        <input type="text" placeholder="URL da imagem">
-                        <span>Respostas incorreta</span>
-                        <input type="text" placeholder="Resposta incorreta 1">
-                        <input type="text" placeholder="URL da imagem 1">
-                        <input type="text" placeholder="Resposta incorreta 2">
-                        <input type="text" placeholder="URL da imagem 2">
-                        <input type="text" placeholder="Resposta incorreta 3">
-                        <input type="text" placeholder="URL da imagem 3">
-                    </div>
-                </div>
-                <!--PERGUNTA 3-->
-                <div class="m3-question" data-identifier="question">
-                    <div class="m3-question-header">
-                        <span class="m3-question-number" data-identifier="question-form">Pergunta 3</span>
-                        <img src="img\edit.svg" alt="Editar" data-identifier="expand">
-                    </div>
-                    <div class="m3-question-options hidden">
-                        <input type="text" placeholder="Texto da pergunta">
-                        <input type="text" placeholder="Cor de fundo da pergunta">
-                        <span>Resposta correta</span>
-                        <input type="text" placeholder="Resposta correta">
-                        <input type="text" placeholder="URL da imagem">
-                        <span>Respostas incorreta</span>
-                        <input type="text" placeholder="Resposta incorreta 1">
-                        <input type="text" placeholder="URL da imagem 1">
-                        <input type="text" placeholder="Resposta incorreta 2">
-                        <input type="text" placeholder="URL da imagem 2">
-                        <input type="text" placeholder="Resposta incorreta 3">
-                        <input type="text" placeholder="URL da imagem 3">
-                    </div>
-                </div>
-                <!--MAIS PERGUNTAS-->
-                <div class="m3-plus-question ">
-                    <img src="img\plus.svg" alt="Mais perguntas">
-                </div>
-                <!--BOTÃO-->
-                <button class="m3-button">Prosseguir pra criar níveis</button>
-            </div>
+            <div class="m3-2 m3-create hidden">
+                <!--PERGUNTAS SERÃO INSERIDAS AQUI-->
+            </div>                                
+            <!--BOTÃO-->
+            <button class="m3-2-button hidden" onclick="goToM33()">Prosseguir pra criar níveis</button>
             <!--CRIAR NÍVEIS-->
-            <div class="m3-create m3.3 ">
-                <!--NIVEL 1-->
-                <div class="m3-level" data-identifier="question">
-                    <div class="m3-level-header">
-                        <span class="m3-level-number" data-identifier="level">Nível 1</span>
-                        <img src="img\edit.svg" alt="Editar" class="hidden" data-identifier="expand">
-                    </div>
-                    <div class="m3-level-options">
-                        <input type="text" placeholder="Título do nível">
-                        <input type="text" placeholder="% de acerto mínima">
-                        <input type="text" placeholder="URL da imagem do nível">
-                        <input type="text" placeholder="Descrição do nível">
-                    </div>
-                </div>
-                <!--NIVEL 2-->
-                <div class="m3-level" data-identifier="question">
-                    <div class="m3-level-header">
-                        <span class="m3-level-number" data-identifier="level">Nível 2</span>
-                        <img src="img\edit.svg" alt="Editar" data-identifier="expand">
-                    </div>
-                    <div class="m3-level-options hidden">
-                        <input type="text" placeholder="Título do nível">
-                        <input type="text" placeholder="% de acerto mínima">
-                        <input type="text" placeholder="URL da imagem do nível">
-                        <input type="text" placeholder="Descrição do nível">
-                    </div>
-                </div>
-                <!--NIVEL 3-->
-                <div class="m3-level" data-identifier="question">
-                    <div class="m3-level-header">
-                        <span class="m3-level-number" data-identifier="level">Nível 3</span>
-                        <img src="img\edit.svg" alt="Editar" data-identifier="expand">
-                    </div>
-                    <div class="m3-level-options hidden">
-                        <input type="text" placeholder="Título do nível">
-                        <input type="text" placeholder="% de acerto mínima">
-                        <input type="text" placeholder="URL da imagem do nível">
-                        <input type="text" placeholder="Descrição do nível">
-                    </div>
-                </div>
-                <!--BOTÃO-->
-                <button class="m3-button">Finalizar Quizz</button>
+            <div class="m3-3 m3-create hidden">
+                <!--NÍVEIS SERÃO INSERIDOS AQUI-->
             </div>
+            <!--BOTÃO-->
+            <button class="m3-3-button hidden" onclick="goToM34()">Finalizar Quizz</button>
             <!--QUIZZ FINALIZADO-->
-            <div class="m3-create m3.4 hidden">
+            <div class="m3-4 m3-create hidden">
                 <div class="m3-finalized">
 
                 </div>
-                <button class="m3-button">Acessar Quizz</button>
-                <span class="m3-go-home">Voltar pra home</span>
+                <button class="m3-4-button hidden" onclick="">Acessar Quizz</button>
+                <p class="m3-go-home">Voltar pra home</p>
             </div>
         </div>
     </main>
@@ -250,7 +146,9 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script-1.js"></script>
+    <script src="js/script-2.js"></script>
+    <script src="js/script-3.js"></script>
 </body>
 
 </html>
