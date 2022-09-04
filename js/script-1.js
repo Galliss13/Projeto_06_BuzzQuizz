@@ -1,7 +1,8 @@
 const urlAPI = 'https://mock-api.driven.com.br/api/v4/buzzquizz'
 
-let lista_id_ext = []
-let lista_id_int = []
+let lista_id_ext = [];
+let lista_id_int = [];
+let quizz_selecionado;
 
 // PEGAR OS QUIZZES DO SERVIDOR E OS DISPOR NA TELA 1
 function getQuizzes() {
@@ -31,6 +32,7 @@ console.log(lista_id_ext);
 
 // INTERAÇÃO DE CLICAR EM UM QUIZZ E ABRIR A TELA 2 COM AS PERGUNTAS 
 function openQuizz(selecionado) {
+    quizz_selecionado = selecionado
     const id_selecionado = selecionado.classList[1];
     const promise = axios.get (`${urlAPI}/quizzes/${id_selecionado}`);
     promise.then(renderizarQuizzSelecionado);
@@ -60,21 +62,32 @@ function renderizarQuizzSelecionado(resposta) {
     //ADIÇÃO DAS QUES PERGUNTAS E RESPOSTAS
 
     // 1 - DEFINIÇÃO DAS VARIÁVEIS UTILIZADAS
-    let arrayQA = [];
+    let arrayA = [];
+    let arrayQ = [];
     let num_resp;
 
     // 2 - FORMANDO ARRAY QUE CONTÉM O NÚMERO DE RESPOSTAS DE CADA PERGUNTA
     for (let y = 0; y < infoQuizz.questions.length; y++) {
-        arrayQA.push(infoQuizz.questions[y].answers.length);
+        arrayQ.push(infoQuizz.questions[y]);
+    }
+
+    arrayQ.sort(comparador);
+
+    function comparador() { 
+        return Math.random() - 0.5; 
+    }
+
+    for (let y = 0; y < arrayQ.length; y++) {
+        arrayA.push(arrayQ[y].answers.length);
     }
 
     // 3 - COM A FUNÇÃO QUE DETERMINA O NÚMERO DE OPÇÕES PARA CADA PERGUNTA, ADICIONA-SE DINAMICAMENTE O CONTEÚDO MAIN_2
-    for (let k = 0; k < infoQuizz.questions.length; k++) {
-        num_resp = arrayQA[k];
+    for (let k = 0; k < arrayQ.length; k++) {
+        num_resp = arrayA[k];
         main_2.innerHTML = main_2.innerHTML + `
         <div class="quizz-box">
-            <div class="box-title" style="background-color: ${infoQuizz.questions[k].color}">
-                <p>${infoQuizz.questions[k].title}</p>
+            <div class="box-title" style="background-color: ${arrayQ[k].color}">
+                <p>${arrayQ[k].title}</p>
             </div>
             ${generateBoxOptions(k, num_resp)}
         </div>
@@ -98,8 +111,8 @@ function renderizarQuizzSelecionado(resposta) {
         for (let n = 0; n < num_de_respostas; n++){
             box_options += `
             <div class="answer-box">
-                <img src=${infoQuizz.questions[num_questao].answers[n].image}>
-                <p>${infoQuizz.questions[num_questao].answers[n].text}</p>
+                <img src=${arrayQ[num_questao].answers[n].image}>
+                <p>${arrayQ[num_questao].answers[n].text}</p>
             </div> 
             `
         }
@@ -111,6 +124,10 @@ function renderizarQuizzSelecionado(resposta) {
     toggleMain('main_1', 'main_2');
 }
 
+function resetQuizz() {
+    openQuizz(quizz_selecionado)
+    window.scrollTo(0,0);
+}
 
 function toggleMain(main_x, main_y) {
     const oldMain = document.querySelector('.' + main_x);
