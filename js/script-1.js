@@ -57,38 +57,31 @@ function renderizarQuizzSelecionado(resposta) {
         </div>
     </div>
     `
-
     //ADIÇÃO DAS QUES PERGUNTAS E RESPOSTAS
-    for (let k = 0; k < infoQuizz.questions.length; k++) {
-    console.log(infoQuizz.questions[k]);
-    main_2.innerHTML = main_2.innerHTML + `
-    <div class="quizz-box">
-        <div class="box-title" style="background-color: ${infoQuizz.questions[k].color}">
-            <p>${infoQuizz.questions[k].title}</p>
-        </div>
-        <div class="box-options">
-            <div class="answer-box">
-                <img src=${infoQuizz.questions[k].answers[0].image}>
-                <p>${infoQuizz.questions[k].answers[0].text}</p>
-            </div>
-            <div class="answer-box">
-                <img src=${infoQuizz.questions[k].answers[1].image}>
-                <p>${infoQuizz.questions[k].answers[1].text}</p>
-            </div>
-            <div class="answer-box">
-                <img src=${infoQuizz.questions[k].answers[2].image}>
-                <p>${infoQuizz.questions[k].answers[2].text}</p>
-            </div>
-            <div class="answer-box">
-                <img src=${infoQuizz.questions[k].answers[3].image}>
-                <p>${infoQuizz.questions[k].answers[3].text}</p>
-            </div> 
-        </div>
-    </div>
-    `
+
+    // 1 - DEFINIÇÃO DAS VARIÁVEIS UTILIZADAS
+    let arrayQA = [];
+    let num_resp;
+
+    // 2 - FORMANDO ARRAY QUE CONTÉM O NÚMERO DE RESPOSTAS DE CADA PERGUNTA
+    for (let y = 0; y < infoQuizz.questions.length; y++) {
+        arrayQA.push(infoQuizz.questions[y].answers.length);
     }
 
-    //ADIÇÃO DOS BOTÕES DE RESET E HOME
+    // 3 - COM A FUNÇÃO QUE DETERMINA O NÚMERO DE OPÇÕES PARA CADA PERGUNTA, ADICIONA-SE DINAMICAMENTE O CONTEÚDO MAIN_2
+    for (let k = 0; k < infoQuizz.questions.length; k++) {
+        num_resp = arrayQA[k];
+        main_2.innerHTML = main_2.innerHTML + `
+        <div class="quizz-box">
+            <div class="box-title" style="background-color: ${infoQuizz.questions[k].color}">
+                <p>${infoQuizz.questions[k].title}</p>
+            </div>
+            ${generateBoxOptions(k, num_resp)}
+        </div>
+        `
+    }
+
+    // 4 - POR FIM, ADIÇÃO DOS BOTÕES DE RESET E HOME
     main_2.innerHTML = main_2.innerHTML + `
     <div class="quizz-options">
         <button class="reset-quizz" onclick="resetQuizz()">Reiniciar Quizz</button>
@@ -96,9 +89,28 @@ function renderizarQuizzSelecionado(resposta) {
     </div>
     `
 
-    //MUDA TELA
+    // FUNÇÃO QUE GERA O BOXOPTION DE CADA PERGUNTA
+    function generateBoxOptions (num_questao, num_de_respostas) {
+        let box_options = '';
+        box_options += `
+        <div class="box-options">
+        `   
+        for (let n = 0; n < num_de_respostas; n++){
+            box_options += `
+            <div class="answer-box">
+                <img src=${infoQuizz.questions[num_questao].answers[n].image}>
+                <p>${infoQuizz.questions[num_questao].answers[n].text}</p>
+            </div> 
+            `
+        }
+        box_options += `</div>`;
+        return box_options;
+    }
+
+    //DEPOIS DE MODIFICAR TODO O CONTEÚDO, MUDA TELA
     toggleMain('main_1', 'main_2');
 }
+
 
 function toggleMain(main_x, main_y) {
     const oldMain = document.querySelector('.' + main_x);
