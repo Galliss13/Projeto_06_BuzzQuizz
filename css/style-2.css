@@ -153,3 +153,15 @@
     color: #818181;
     cursor: pointer;
 }
+
+.true p {
+    color: #009C22
+}
+
+.false {
+    opacity: 60%;
+}
+
+.false p {
+    color: #FF4B4B
+}

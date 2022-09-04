@@ -66,7 +66,7 @@ function renderizarQuizzSelecionado(resposta) {
     let arrayQ = [];
     let num_resp;
 
-    // 2 - FORMANDO ARRAY QUE CONTÉM O NÚMERO DE RESPOSTAS DE CADA PERGUNTA
+    // 2 - FORMANDO ARRAY QUE CONTÉM O NÚMERO DE RESPOSTAS DE CADA PERGUNTA E O ARRAY EMBARALHADO DAS QUESTÕES
     for (let y = 0; y < infoQuizz.questions.length; y++) {
         arrayQ.push(infoQuizz.questions[y]);
     }
@@ -110,7 +110,7 @@ function renderizarQuizzSelecionado(resposta) {
         `   
         for (let n = 0; n < num_de_respostas; n++){
             box_options += `
-            <div class="answer-box">
+            <div class="answer-box ${arrayQ[num_questao].answers[n].isCorrectAnswer}" onclick="verificarResposta(this)">
                 <img src=${arrayQ[num_questao].answers[n].image}>
                 <p>${arrayQ[num_questao].answers[n].text}</p>
             </div> 
