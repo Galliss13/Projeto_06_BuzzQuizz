@@ -67,7 +67,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!--MAIN 2-->
         <div class="main_2 hidden">
 
@@ -85,26 +85,26 @@
             <!--CRIAR QUIZZ-->
             <div class="m3-1 m3-create ">
                 <div class="m3-theme">
-                    <input type="text" size="20" maxlength="65" placeholder="Título do seu quizz">
+                    <input type="text" placeholder="Título do seu quizz">
                     <input type="url" placeholder="URL da imagem do seu quizz">
-                    <input type="number" min="3" placeholder="Quantidade de perguntas do quizz">
-                    <input type="number" min="2" placeholder="Quantidade de níveis do quizz">
+                    <input type="number" placeholder="Quantidade de perguntas do quizz">
+                    <input type="number" placeholder="Quantidade de níveis do quizz">
                 </div>
                 <!--BOTÃO-->
-                <button class="m3-1-button" onclick="goToM32()">Prosseguir para criar perguntas</button>
+                <button class="m3-1-button" onclick="validaM31()">Prosseguir para criar perguntas</button>
             </div>
             <!--CRIAR PERGUNTAS-->
             <div class="m3-2 m3-create hidden">
                 <!--PERGUNTAS SERÃO INSERIDAS AQUI-->
             </div>                                
             <!--BOTÃO-->
-            <button class="m3-2-button hidden" onclick="goToM33()">Prosseguir pra criar níveis</button>
+            <button class="m3-2-button hidden" onclick="validaM32()">Prosseguir pra criar níveis</button>
             <!--CRIAR NÍVEIS-->
             <div class="m3-3 m3-create hidden">
                 <!--NÍVEIS SERÃO INSERIDOS AQUI-->
             </div>
             <!--BOTÃO-->
-            <button class="m3-3-button hidden" onclick="goToM34()">Finalizar Quizz</button>
+            <button class="m3-3-button hidden" onclick="validaM33()">Finalizar Quizz</button>
             <!--QUIZZ FINALIZADO-->
             <div class="m3-4 m3-create hidden">
                 <div class="m3-finalized">

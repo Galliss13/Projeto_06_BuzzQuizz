@@ -116,10 +116,6 @@
     box-shadow: 0px 0px 10px 0px #0000000D;
 }
 
-.results-score {}
-
-.results-message {}
-
 .quizz-options {
     display: flex;
     flex-direction: column;
