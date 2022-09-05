@@ -125,7 +125,7 @@
 
 .reset-quizz {
     height: 52px;
-    width: 260.3782043457031px;
+    width: 260px;
     border-radius: 15px;
     background: #EC362D;
     font-family: Roboto;
@@ -150,14 +150,18 @@
     cursor: pointer;
 }
 
-.true p {
-    color: #009C22
+.right-answer {
+    color: #009C22;
 }
 
-.false {
+.non-chosen-answer {
     opacity: 60%;
 }
 
-.false p {
+.chosen-answer {
+    opacity: 100%;
+}
+
+.wrong-answer{
     color: #FF4B4B
 }
