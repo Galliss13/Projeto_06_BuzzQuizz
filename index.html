@@ -31,18 +31,18 @@
         <!--MAIN 1-->
         <div class="main_1">
             <!--CRIAR QUIZZES-->
-            <div class="create_quizz_box hidden">
+            <div class="create_quizz_box">
                 <div class="create_quizz">
                     <div class="create_quizz_ps">
                         <p>Você não criou nenhum</p>
                         <p>quizz ainda :(</p>
                     </div>
-                    <button onclick="toggleMain(main_1, main_3)" class="create_quizz_button">Criar Quizz</button>
+                    <button onclick="toggleMain('main_1', 'main_3')" class="create_quizz_button">Criar Quizz</button>
                 </div>
             </div>
             <!--ABRE QUANDO ALGUM QUIZZ JÁ FOI CRIADO-->
-            <p class="myquizzes_p">Seus quizzes <span class="myquizzes_icone"><ion-icon onclick="toggleMain('main_1', 'main_3')" name="add-circle"></ion-icon></span> </p>
-            <div class="myquizzes_box">
+            <p onclick="toggleMain('main_1', 'main_3')" class="myquizzes_p hidden">Seus quizzes <span class="myquizzes_icone"><ion-icon onclick="toggleMain('main_1', 'main_3')" name="add-circle"></ion-icon></span> </p>
+            <div class="myquizzes_box hidden" >
                 <div class="myquizzes">
                     <div data-identifier="quizz-card" class="quizz">
                         <img src='img\exemplo.JPG'>

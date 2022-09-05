@@ -24,7 +24,6 @@ function renderizarQuizzes(resposta) {
             <p>${resposta.data[i].title}</p>
         </div>
         `;
-    lista_id_ext.push(resposta.data[i].id);
   }
 }
 
@@ -34,6 +33,7 @@ getQuizzes();
 function openQuizz(selecionado) {
   quizz_selecionado = selecionado;
   const id_selecionado = selecionado.classList[1];
+  lista_id_ext.push(id_selecionado);
   const promise = axios.get(`${urlAPI}/quizzes/${id_selecionado}`);
   promise.then(renderizarQuizzSelecionado);
 }
@@ -88,7 +88,7 @@ function renderizarQuizzSelecionado(resposta) {
       `
         <div class="quizz-box">
             <div class="box-title" style="background-color: ${arrayQ[k].color}">
-                <p>${arrayQ[k].title}</p>
+                <p data-identifier="question">${arrayQ[k].title}</p>
             </div>
             ${generateBoxOptions(k, num_resp)}
         </div>
@@ -113,7 +113,7 @@ function renderizarQuizzSelecionado(resposta) {
         `;
     for (let n = 0; n < num_de_respostas; n++) {
       box_options += `
-            <div class="answer-box question${num_questao} ${arrayQ[num_questao].answers[n].isCorrectAnswer}" onclick="verificarResposta(this, ${num_questao}, ${arrayQ.length})">
+            <div data-identifier="answer" class="answer-box question${num_questao} ${arrayQ[num_questao].answers[n].isCorrectAnswer}" onclick="verificarResposta(this, ${num_questao}, ${arrayQ.length})">
                 <img src=${arrayQ[num_questao].answers[n].image}>
                 <p>${arrayQ[num_questao].answers[n].text}</p>
             </div> 
