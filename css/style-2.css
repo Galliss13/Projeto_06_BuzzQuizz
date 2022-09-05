@@ -116,10 +116,6 @@
     box-shadow: 0px 0px 10px 0px #0000000D;
 }
 
-.results-score {}
-
-.results-message {}
-
 .quizz-options {
     display: flex;
     flex-direction: column;
@@ -129,7 +125,7 @@
 
 .reset-quizz {
     height: 52px;
-    width: 260.3782043457031px;
+    width: 260px;
     border-radius: 15px;
     background: #EC362D;
     font-family: Roboto;
@@ -152,4 +148,20 @@
     text-align: center;
     color: #818181;
     cursor: pointer;
+}
+
+.right-answer {
+    color: #009C22;
+}
+
+.non-chosen-answer {
+    opacity: 60%;
+}
+
+.chosen-answer {
+    opacity: 100%;
+}
+
+.wrong-answer{
+    color: #FF4B4B
 }
