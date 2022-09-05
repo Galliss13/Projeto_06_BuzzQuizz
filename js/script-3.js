@@ -14,6 +14,7 @@ function validateForm1() {
 
 }
 */
+
 let m3ThemeQuestions;
 let m3ThemeLevels;
 let m3Questions;
@@ -61,6 +62,7 @@ function generateQuestions() {
                 </div>
             `;
         }
+
         else {
             m32.innerHTML += `
             <!--PERGUNTA ${i + 1}-->
@@ -112,6 +114,7 @@ function generateLevels() {
                 </div>
             `;
         }
+        
         else {
             m33.innerHTML += `
             <!--NIVEL ${i + 1}-->
